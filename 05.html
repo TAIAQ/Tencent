@@ -11,5 +11,12 @@
 </html>
 <script>
 
-    
+ function apppendPararms(str,obj){
+      str +="?"
+      for(let key in obj){
+        str += `${key}=${obj[key]}&`
+      }
+      return str
+    }
+    console.log(apppendPararms('http://url',{a:1,b:2}));
 </script>
