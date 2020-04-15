@@ -11,11 +11,16 @@
 </html>
 <script>
 
- function apppendPararms(str,obj){
-      str +="?"
-      for(let key in obj){
-        str += `${key}=${obj[key]}&`
-      }
-      return str.slice(0,str.length-1)
-    }
+function appendParams(url = '', params = {}){
+    if(url.indexOf("?")==-1){
+        url+="?";
+    }else{
+        url+="&";
+    }
+    for(var key in params) {
+                    url+=encodeURIComponent(key)+"="+encodeURIComponent(params[key]) + '&';
+    }
+    return url.replace(/\&$/g, '');
+    
+}
 </script>
