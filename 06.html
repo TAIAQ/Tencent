@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+  var data = new Date(); 
+    data.setDate(1);
+    data.setHours(0);
+    data.setSeconds(0);
+    data.setMinutes(0);
+    
+    var data1 = new Date(); 
+    if (data.getMonth() == 11){
+      data1.setMonth(0)
+    }else{
+      data1.setMonth(data.getMonth() + 1)
+    }
+    data1.setDate(1);
+    data1.setHours(0);
+    data1.setSeconds(0);
+    data1.setMinutes(0);
+    console.log('本月第一天0点' + data.getTime())
+    console.log('本月最后一天23点' + data1.getTime())
+    var timeStart = parseInt(data.getTime() / 1000);
+    var timeEnd = parseInt(data1.getTime() / 1000 )- 1;
+</script>
+</html>
